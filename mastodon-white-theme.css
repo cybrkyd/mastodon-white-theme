@@ -1,0 +1,412 @@
+/*
+
+Mastodon White Theme
+version: 1.0
+
+Some ideas borrowed from:
+	* https://gist.github.com/ericwbailey/dab7fa46fc03beaa011abc5864a49ddc
+	* https://github.com/nileane/Mastodon-PeachyTweaks
+
+*/
+
+
+/* Colour Palette */
+:root {
+    --color-accent: #1e90ff;
+    --color-accent-faded: #59adff;
+    --color-accent-bg: rgb(30, 144, 255, .1);
+    --color-accent-focus: rgba(30, 144, 255, .75);
+    --color-accent-fg: rgba(0, 0, 0, .7);
+    --color-glow: rgb(0, 195, 255);
+    --color-neutral: #9baec8;
+    --color-verified: #4aa51a;
+    --color-black: #000000;
+    --color-hash: #444b5d;
+    --color-panel: #f7f9fa;
+    --custom-color-background: #ffffff;
+    --custom-color-border-resting: #e0e5eb;
+    --custom-color-border-active: #c2ccd8;
+}
+
+
+/* Hiding things */
+.about__footer,
+.about__header h1, .about__header p,
+.about__meta,
+.about__section__title,
+.app-body .ui__header__links .button.button,
+.app-body .ui__header__links .button.button-tertiary,
+.detailed-status__action-bar [aria-label="Bookmark"],
+.getting-started__trends,
+.layout-single-column .ui__header__logo,
+.layout-single-column .column-link.column-link--logo,
+.link-footer,
+.logo-container,
+.media-gallery__gifv__label, /* Hide alt-text badge on images */
+.navigation-panel hr,
+.navigation-panel__legal > hr,
+.navigation-panel > .column-link:only-of-type,
+.navigation-panel [title="Bookmarks"],
+.navigation-panel [title="Favourites"],
+.navigation-panel [title="Lists"],
+.no-list > li:first-child,
+.server-banner,
+.server-banner__hero,
+.server-banner__introduction,
+.server-banner__meta,
+.sign-in-banner,
+.status__action-bar [aria-label="Bookmark"] {
+    display: none;
+}
+
+
+/* Background */
+html,
+body,
+body.admin,
+body.lighter,
+.account__section-headline,
+.admin-wrapper .sidebar-wrapper__inner,
+.detailed-status__wrapper-direct .detailed-status,
+.detailed-status__wrapper-direct .detailed-status__action-bar,
+.explore__search-results,
+.explore__search-results .account,
+.explore__search-results .trends__item
+.search-results__section__header,
+.search-results__section .account,
+.search-results__section .trends__item,
+.tabs-bar__wrapper {
+    background-color: var(--custom-color-background);
+}
+.notification__filter-bar {
+	background: var(--custom-color-background);
+}
+
+
+/* Custom About page */
+.about__section__body {
+    border: 0 !important;
+    padding-bottom: 3em;
+}
+.prose {
+    text-align: center;
+    font-size: 24px;
+}
+.prose a {
+    text-decoration: none;
+}
+.prose a:hover {
+    text-decoration: underline;
+    color: var(--color-accent-faded);
+}
+
+
+/* Compose box */
+.layout-single-column .compose-form .autosuggest-textarea__textarea {
+    font-size: 15px;
+    min-height: 250px;
+}
+
+
+/* Wider Timeline Column */
+@media screen and (min-width: 1300px) {
+  .columns-area__panels__main {
+    max-width: 720px;
+    }
+}
+
+
+/* Profiles */
+.account__header__bio .account__header__fields .verified a,
+.account__header__bio .account__header__fields .verified dd {
+    color: var(--color-verified);
+}
+.account__header__bio .account__header__fields .verified,
+.account__header__bio .account__header__fields,
+.account__header__fields dl {
+    border: 1px solid;
+    border-color: var(--custom-color-border-resting);
+    background: none;
+}
+.account__header__bio .account__header__fields .verified dt {
+    color: #444b5d;
+}
+
+
+/* Load More */
+.load-more:focus,
+.load-more:hover {
+    background-color: var(--custom-color-background-panel);
+}
+
+
+/* Inputs */
+.search__input {
+    background-color: var(--custom-color-background);
+    border-color: var(--custom-color-border-resting);
+}
+.search__input:focus,
+.search__input:hover {
+    background-color: var(--custom-color-background);
+    border-color: var(--custom-color-border-active);
+}
+.search__input:active {
+    transition: none;
+}
+.search__popout {
+    border: 1px solid var(--custom-color-border-active);
+    box-shadow: none;
+    background-color: var(--custom-color-background);
+}
+
+
+/* New Post Timeline Glow */
+.column-header__wrapper.active:before {
+    background: radial-gradient(ellipse, var(--color-glow), rgba(250, 5, 5, 0) 60%);
+    opacity: 40%;
+}
+
+
+/* Trending Hashtags Graph */
+.trends__item__sparkline path:last-child {
+    stroke: var(--color-accent) !important;
+}
+.trends__item__sparkline path:first-child {
+    fill: var(--color-accent) !important;
+    opacity: 20%;
+}
+
+
+/* Status Card */
+.status-card,
+.app-body .status-card:active .status-card__host,
+.app-body .status-card:focus .status-card__host,
+.app-body .status-card:hover .status-card__host,
+.app-body .status-card:active .status-card__author,
+.app-body .status-card:active .status-card__description,
+.app-body .status-card:active .status-card__title,
+.app-body .status-card:focus .status-card__author,
+.app-body .status-card:focus .status-card__description,
+.app-body .status-card:focus .status-card__title,
+.app-body .status-card:hover .status-card__author,
+.app-body .status-card:hover .status-card__description,
+.app-body .status-card:hover .status-card__title {
+    color: var(--color-black);
+}
+.status-card__host,
+.status-card__author {
+	font-size: 13px;
+}
+.status-card__title {
+    color: var(--color-black);
+    font-size: 18px;
+    font-weight: normal;
+}
+.status-card__author strong {
+    font-weight: 200;
+}
+
+
+/* Status Action Bar */
+.status__action-bar {
+    justify-content: end;
+}
+
+
+/* Borders */
+.column-back-button,
+.column-header,
+.compose-form__poll-wrapper .button.button-secondary,
+.compose-panel .reply-indicator,
+.navigation-panel hr,
+.status-card,
+.compose-form .compose-form__autosuggest-wrapper {
+    border-color: var(--custom-color-border-resting);
+}
+.account,
+.account__section-headline,
+.column-header__collapsible,
+.conversation,
+.follow_requests-unlocked_explanation,
+.load-gap,
+.status,
+.trends__item {
+    border-bottom-color: var(--custom-color-border-resting);
+}
+.column-header__collapsible-inner {
+    border-color: var(--custom-color-border-resting);
+    border-right: none;
+    border-left: none;
+}
+.about__section__body,
+.column > .scrollable,
+.column > .scrollable.about {
+    border: none;
+}
+.detailed-status {
+    border-top-color: var(--custom-color-border-resting);
+}
+.detailed-status__action-bar {
+    border-top-color: var(--custom-color-border-resting);
+    border-bottom-color: var(--custom-color-border-resting);
+}
+.notification__filter-bar {
+    border-right: none;
+    border-bottom-color: var(--custom-color-border-resting);
+    border-left: none;
+}
+.status__line {
+  border-inline-start: 2px solid var(--custom-color-border-resting);
+}
+.notification.unread::before, .status__wrapper.unread::before {
+  border-inline-start: 1px solid var(--custom-color-border-notification-resting);
+}
+.copypaste input {
+    border-color: var(--color-accent);
+}
+
+@media screen and (max-width: 1174px) {
+  .column-header {
+    border-right-color: var(--custom-color-background) !important;
+  }
+
+  .navigation-panel hr {
+    border-color: var(--custom-color-background) !important;
+  }
+
+  .layout-single-column .ui__header {
+    border-bottom-color: var(--custom-color-background);
+    background: var(--custom-color-background);
+  }
+  
+  .columns-area__panels__pane--navigational .navigation-panel {
+    background: var(--custom-color-background);
+  }
+
+  .column-header {
+    border-right-color: var(--custom-color-background);
+  }
+
+  .columns-area__panels__pane--navigational .navigation-panel {
+    border-inline-start: 1px solid var(--custom-color-background);
+  }
+}
+
+
+/* Colours */
+.admin-wrapper .sidebar ul .simple-navigation-active-leaf a {
+    background-color: var(--color-accent-faded);
+}
+.loading-bar,
+.poll__chart.leading {
+    background-color: var(--color-accent);
+}
+.account-card__bio a,
+.poll__chart,
+.reply-indicator__content a,
+.status__content a.mention,
+.status__content a,
+.text-icon-button.active {
+    color: var(--color-accent);
+}
+.account__header__content a,
+.hashtag-bar a,
+.status__content a,
+.status__content a.hashtag {
+    color: var(--color-hash);
+}
+.compose-form .compose-form__buttons-wrapper,
+.simple_form input[type="email"],
+.simple_form input[type="password"],
+.simple_form input[type="text"],
+.simple_form input[type="url"],
+.simple_form select,
+.simple_form textarea {
+    border-color: var(--custom-color-border-resting);
+    background: #eeeeee;
+}
+.column-header.active .column-header__icon {
+    text-shadow: none;
+    color: var(--color-accent);
+}
+.notification__message .fa,
+.notification__favourite-icon-wrapper .star-icon {
+    color: var(--color-accent-faded);
+}
+.muted .poll__chart.leading {
+    background: var(--color-accent-faded);
+}
+.button.button-tertiary,
+.account__header__fields a,
+.account__header__bio .account__header__fields a,
+.about__section__title,
+.column-back-button,
+.column-header > .column-header__back-button,
+.column-header__back-button,
+.column-link--transparent.active,
+.interaction-modal__icon,
+.prose a,
+.reply-indicator__content a.unhandled-link,
+.status__content a.unhandled-link,
+.status__content__read-more-button {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+
+/* Buttons, drop-down menus and links */
+.app-body .button {
+    background-color: var(--color-accent);
+    color: var(--color-panel);
+}
+.admin-wrapper .content__heading__tabs a.selected,
+.language-dropdown__dropdown__results__item:hover,
+.language-dropdown__dropdown__results__item.active,
+.search__popout__menu__item.selected,
+.search__popout__menu__item:hover,
+.privacy-dropdown__option.active,
+.privacy-dropdown__option.active:hover,
+.privacy-dropdown__option:hover {
+    background: var(--color-accent) !important;
+}
+.privacy-dropdown.active .privacy-dropdown__value.active .icon-button,
+.privacy-dropdown.active .privacy-dropdown__value {
+    color: var(--color-accent-fg);
+}
+.dropdown-menu__item a:active,
+.dropdown-menu__item a:focus,
+.dropdown-menu__item a:hover,
+.dropdown-menu__item button:active,
+.dropdown-menu__item button:focus,
+.dropdown-menu__item button:hover {
+    background: var(--color-accent);
+    color: var(--color-accent-fg);
+    outline: 0;
+}
+.button,
+.simple_form button,
+.simple_form .button,
+.simple_form .block-button {
+    color: var(--color-panel);
+    background: var(--color-accent);
+    border: 0 none;
+    box-shadow: inset 0 0 0 1px rgba(155, 174, 200, .4);
+}
+.button:active,
+.button:focus,
+.button:hover,
+.app-body .button:active,
+.app-body .button:focus,
+.app-body .button:hover,
+.simple_form button:active,
+.simple_form button:focus,
+.simple_form button:hover,
+.simple_form .button:active,
+.simple_form .button:focus,
+.simple_form .button:hover,
+.simple_form .block-button:active,
+.simple_form .block-button:focus,
+.simple_form .block-button:hover {
+    background-color: var(--color-accent-focus);
+	color: var(--color-panel);
+}
