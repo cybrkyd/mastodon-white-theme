@@ -311,7 +311,6 @@ body.lighter,
 }
 .account__header__content a,
 .hashtag-bar a,
-.status__content a,
 .status__content a.hashtag {
     color: var(--color-hash);
 }
@@ -336,10 +335,10 @@ body.lighter,
 .muted .poll__chart.leading {
     background: var(--color-accent-faded);
 }
-.button.button-tertiary,
 .account__header__fields a,
 .account__header__bio .account__header__fields a,
 .about__section__title,
+.button.button-tertiary,
 .column-back-button,
 .column-header > .column-header__back-button,
 .column-header__back-button,
@@ -348,9 +347,18 @@ body.lighter,
 .prose a,
 .reply-indicator__content a.unhandled-link,
 .status__content a.unhandled-link,
-.status__content__read-more-button {
+.status__content__read-more-button,
+.timeline-hint a {
     color: var(--color-accent);
     border-color: var(--color-accent);
+}
+.timeline-hint a:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+.timeline-hint a:active,
+.timeline-hint a:focus {
+    color: var(--color-accent);
 }
 
 
@@ -359,9 +367,12 @@ body.lighter,
     background-color: var(--color-accent);
     color: var(--color-panel);
 }
+.account__section-headline a.active::before,
+.account__section-headline button.active::before,
 .admin-wrapper .content__heading__tabs a.selected,
 .language-dropdown__dropdown__results__item:hover,
 .language-dropdown__dropdown__results__item.active,
+.notification__filter-bar button.active::before,
 .search__popout__menu__item.selected,
 .search__popout__menu__item:hover,
 .privacy-dropdown__option.active,
