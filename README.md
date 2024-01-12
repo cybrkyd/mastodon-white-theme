@@ -81,3 +81,8 @@ For instance admins only:
 
 This will override everything and become the site-wide theme so maybe check with your users first if this is what they really want. There are alternative methods to install this theme as a user-selectable theme but that will not be covered here.
 
+
+# License
+
+Mastodon White Theme is made available under [The GNU Affero General Public License](https://github.com/cybrkyd/mastodon-white-theme/blob/main/LICENSE)
+
