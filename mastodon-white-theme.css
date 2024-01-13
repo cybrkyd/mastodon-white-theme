@@ -99,7 +99,9 @@ body.lighter,
     text-decoration: underline;
     color: var(--color-accent-faded);
 }
-
+.prose-small {
+    font-size: 12px;
+}
 
 /* Compose box */
 .layout-single-column .compose-form .autosuggest-textarea__textarea {
