@@ -1,5 +1,10 @@
 # Change Log
 
+2024-01-13
+* Version 1.0.3
+    * Added rule for About Page server and theme info:
+		* .prose-small
+
 2024-01-12
 * Version 1.0.1
     * Added rules:
