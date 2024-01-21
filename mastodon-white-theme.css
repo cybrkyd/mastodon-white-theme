@@ -15,15 +15,15 @@ Some ideas borrowed from:
     --color-accent-bg: rgb(30, 144, 255, .1);
     --color-accent-focus: rgba(30, 144, 255, .75);
     --color-accent-fg: rgba(0, 0, 0, .7);
-    --color-glow: rgb(0, 195, 255);
-    --color-neutral: #9baec8;
-    --color-verified: #4aa51a;
+    --color-background: #ffffff;
     --color-black: #000000;
+    --color-border-resting: #e0e5eb;
+    --color-border-active: #c2ccd8;
+    --color-glow: rgb(0, 195, 255);
     --color-hash: #444b5d;
+    --color-neutral: #9baec8;
     --color-panel: #f7f9fa;
-    --custom-color-background: #ffffff;
-    --custom-color-border-resting: #e0e5eb;
-    --custom-color-border-active: #c2ccd8;
+    --color-verified: #4aa51a;
 }
 
 
@@ -57,7 +57,6 @@ Some ideas borrowed from:
     display: none;
 }
 
-
 /* Background */
 html,
 body,
@@ -65,8 +64,6 @@ body.admin,
 body.lighter,
 .account__section-headline,
 .admin-wrapper .sidebar-wrapper__inner,
-.detailed-status__wrapper-direct .detailed-status,
-.detailed-status__wrapper-direct .detailed-status__action-bar,
 .explore__search-results,
 .explore__search-results .account,
 .explore__search-results .trends__item
@@ -74,12 +71,22 @@ body.lighter,
 .search-results__section .account,
 .search-results__section .trends__item,
 .tabs-bar__wrapper {
-    background-color: var(--custom-color-background);
+    background-color: var(--color-background);
 }
-.notification__filter-bar {
-	background: var(--custom-color-background);
+.column > .scrollable,
+.detailed-status,
+.detailed-status__wrapper-direct .detailed-status,
+.detailed-status__wrapper-direct .detailed-status__action-bar,
+.empty-column-indicator,
+.notification__filter-bar,
+.scrollable .account-card,
+.status,
+.scrollable > div:first-child .detailed-status,
+.scrollable > .detailed-status__action-bar:focus,
+.focusable:focus .detailed-status,
+.focusable:focus .detailed-status__action-bar {
+	background: var(--color-background);
 }
-
 
 /* Custom About page */
 .about__section__body {
@@ -98,7 +105,7 @@ body.lighter,
     color: var(--color-accent-faded);
 }
 .prose-small {
-    font-size: 12px;
+    font-size: 14px;
 }
 
 /* Compose box */
@@ -107,14 +114,12 @@ body.lighter,
     min-height: 250px;
 }
 
-
 /* Wider Timeline Column */
 @media screen and (min-width: 1300px) {
   .columns-area__panels__main {
     max-width: 720px;
     }
 }
-
 
 /* Profiles */
 .account__header__bio .account__header__fields .verified a,
@@ -125,47 +130,43 @@ body.lighter,
 .account__header__bio .account__header__fields,
 .account__header__fields dl {
     border: 1px solid;
-    border-color: var(--custom-color-border-resting);
+    border-color: var(--color-border-resting);
     background: none;
 }
 .account__header__bio .account__header__fields .verified dt {
     color: #444b5d;
 }
 
-
 /* Load More */
 .load-more:focus,
 .load-more:hover {
-    background-color: var(--custom-color-background-panel);
+    background-color: var(--color-panel);
 }
-
 
 /* Inputs */
 .search__input {
-    background-color: var(--custom-color-background);
-    border-color: var(--custom-color-border-resting);
+    background-color: var(--color-background);
+    border-color: var(--color-border-resting);
 }
 .search__input:focus,
 .search__input:hover {
-    background-color: var(--custom-color-background);
-    border-color: var(--custom-color-border-active);
+    background-color: var(--color-background);
+    border-color: var(--color-border-active);
 }
 .search__input:active {
     transition: none;
 }
 .search__popout {
-    border: 1px solid var(--custom-color-border-active);
+    border: 1px solid var(--color-border-active);
     box-shadow: none;
-    background-color: var(--custom-color-background);
+    background-color: var(--color-background);
 }
-
 
 /* New Post Timeline Glow */
 .column-header__wrapper.active:before {
     background: radial-gradient(ellipse, var(--color-glow), rgba(250, 5, 5, 0) 60%);
     opacity: 40%;
 }
-
 
 /* Trending Hashtags Graph */
 .trends__item__sparkline path:last-child {
@@ -175,7 +176,6 @@ body.lighter,
     fill: var(--color-accent) !important;
     opacity: 20%;
 }
-
 
 /* Status Card */
 .status-card,
@@ -205,13 +205,17 @@ body.lighter,
 .status-card__author strong {
     font-weight: 200;
 }
-
-
-/* Status Action Bar */
 .status__action-bar {
     justify-content: end;
 }
-
+.detailed-status__button,
+.detailed-status__action-bar-dropdown {
+	flex: 0 1 auto;
+}
+.detailed-status__action-bar {
+	gap: 18px;
+	justify-content: end;
+}
 
 /* Borders */
 .column-back-button,
@@ -221,7 +225,7 @@ body.lighter,
 .navigation-panel hr,
 .status-card,
 .compose-form .compose-form__autosuggest-wrapper {
-    border-color: var(--custom-color-border-resting);
+    border-color: var(--color-border-resting);
 }
 .account,
 .account__section-headline,
@@ -231,10 +235,10 @@ body.lighter,
 .load-gap,
 .status,
 .trends__item {
-    border-bottom-color: var(--custom-color-border-resting);
+    border-bottom-color: var(--color-border-resting);
 }
 .column-header__collapsible-inner {
-    border-color: var(--custom-color-border-resting);
+    border-color: var(--color-border-resting);
     border-right: none;
     border-left: none;
 }
@@ -244,19 +248,19 @@ body.lighter,
     border: none;
 }
 .detailed-status {
-    border-top-color: var(--custom-color-border-resting);
+    border-top-color: var(--color-border-resting);
 }
 .detailed-status__action-bar {
-    border-top-color: var(--custom-color-border-resting);
-    border-bottom-color: var(--custom-color-border-resting);
+    border-top-color: var(--color-border-resting);
+    border-bottom-color: var(--color-border-resting);
 }
 .notification__filter-bar {
     border-right: none;
-    border-bottom-color: var(--custom-color-border-resting);
+    border-bottom-color: var(--color-border-resting);
     border-left: none;
 }
 .status__line {
-  border-inline-start: 2px solid var(--custom-color-border-resting);
+  border-inline-start: 2px solid var(--color-border-resting);
 }
 .notification.unread::before, .status__wrapper.unread::before {
   border-inline-start: 1px solid var(--custom-color-border-notification-resting);
@@ -267,31 +271,30 @@ body.lighter,
 
 @media screen and (max-width: 1174px) {
   .column-header {
-    border-right-color: var(--custom-color-background) !important;
+    border-right-color: var(--color-background) !important;
   }
 
   .navigation-panel hr {
-    border-color: var(--custom-color-background) !important;
+    border-color: var(--color-background) !important;
   }
 
   .layout-single-column .ui__header {
-    border-bottom-color: var(--custom-color-background);
-    background: var(--custom-color-background);
+    border-bottom-color: var(--color-background);
+    background: var(--color-background);
   }
   
   .columns-area__panels__pane--navigational .navigation-panel {
-    background: var(--custom-color-background);
+    background: var(--color-background);
   }
 
   .column-header {
-    border-right-color: var(--custom-color-background);
+    border-right-color: var(--color-background);
   }
 
   .columns-area__panels__pane--navigational .navigation-panel {
-    border-inline-start: 1px solid var(--custom-color-background);
+    border-inline-start: 1px solid var(--color-background);
   }
 }
-
 
 /* Colours */
 .admin-wrapper .sidebar ul .simple-navigation-active-leaf a {
@@ -321,7 +324,7 @@ body.lighter,
 .simple_form input[type="url"],
 .simple_form select,
 .simple_form textarea {
-    border-color: var(--custom-color-border-resting);
+    border-color: var(--color-border-resting);
     background: #eeeeee;
 }
 .column-header.active .column-header__icon {
@@ -360,7 +363,6 @@ body.lighter,
 .timeline-hint a:focus {
     color: var(--color-accent);
 }
-
 
 /* Buttons, drop-down menus and links */
 .app-body .button {
