@@ -8,6 +8,7 @@ A beautiful, minimalistic white theme for Mastodon Web UI with blue colour schem
 
 This theme has only been tested with the Mastodon (Light) system theme; it probably will not look so cool if run on Mastodon (Dark) or Mastodon (High Contrast).
 
+**UPDATE: This repo will no longer receive any updates. My Mastodon instance crashed and burned so I no longer use Mastodon.**
 
 ### Home Page
 
