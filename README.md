@@ -1,6 +1,8 @@
 
 # Mastodon White Theme
 
+## End of life
+**This is no longer maintained and may no longer be valid.**
 
 ## About
 
